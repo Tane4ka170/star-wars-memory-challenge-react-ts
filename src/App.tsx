@@ -1,12 +1,26 @@
-import { createBoard } from "./setup";
+import { CardType, createBoard } from "./setup";
 // Styles
 import { Grid } from "./App.styles";
+import React from "react";
+import { shuffleArray } from "./utils";
 
 const App = () => {
-  console.log(createBoard());
+  const [cards, setCards] = React.useState<CardType[]>(
+    shuffleArray(createBoard())
+  );
+  const [gameWon, setGameWon] = React.useState(false);
+  const [matchedPairs, setMatchedPairs] = React.useState(0);
+  const [clickedCard, setClickedCard] = React.useState<undefined | CardType>(
+    undefined
+  );
+
   return (
     <div>
-      <Grid>Start Here!</Grid>
+      <Grid>
+        {cards.map((card) => (
+          <p>{card.id}</p>
+        ))}
+      </Grid>
     </div>
   );
 };
