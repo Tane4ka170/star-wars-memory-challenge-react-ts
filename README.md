@@ -1,50 +1,66 @@
-# React + TypeScript + Vite
+# 🚀 StarWars Memory Challenge 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to StarWars Memory Challenge, a fun and interactive memory game built using React and TypeScript! Test your memory by matching pairs of iconic Star Wars images in this simple, yet challenging game.
 
-Currently, two official plugins are available:
+## 🎮 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🖼 **Card Flip Animation** : Beautiful 3D flip effects using `styled-components` for both front and back images.
+- 🕹 **Interactive Gameplay** : Click on cards to reveal Star Wars-themed images and try to find their matching pairs.
+- 🎯 **Victory Alert** : Get a congratulatory message when you successfully match all pairs!
+- 🧩 **Dynamic Board Creation** : The game board is generated dynamically, with shuffled Star Wars images each time.
+- 🎨 **Responsive Design** : The game board adjusts to screen size, making it playable on both desktop and mobile.
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React ⚛️ for building UI components.
+- **TypeScript** 🟦 for static typing and code safety.
+- **Styled-Components** 💅 for dynamic styling and CSS-in-JS integration.
+- **Webpack** 📦 for bundling and building assets.
 
-- Configure the top-level `parserOptions` property like this:
+## 📂 Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- `src/`: Contains all the source code of the project.
+  - `components/`: Reusable components such as `Card`.
+  - `img/`: Star Wars-themed images for the cards.
+  - `setup/`: Game setup, including card creation and board shuffling.
+  - `utils/`: Utility functions like the card shuffling algorithm.
+- `App.tsx`: Main application logic and game state management.
+- `Card.styles.ts`: Styled components for card design and animations.
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+
+```
+git clone https://github.com/Tane4ka170/star-wars-memory-challenge-react-ts.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate to the project directory:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+cd star-wars-memory-challenge-react-ts
+```
+
+3. Install the dependencies:
+
+```
+npm install
+```
+
+4. Start the development server:
+
+```
+npm run dev
+```
+
+5. Open your browser and go to `http://localhost:3000` to play!
+
+## 🎉 How to Play
+
+1. Click on any card to reveal the Star Wars image.
+2. Find its matching pair by clicking on another card.
+3. Match all the pairs to win the game!
+
+---
+
+Enjoy the StarWars Memory Challenge and may the Force be with you! ✨
