@@ -3,6 +3,7 @@ import { CardType, createBoard } from "./setup";
 import { Grid } from "./App.styles";
 import React from "react";
 import { shuffleArray } from "./utils";
+import Card from "./components/Card";
 
 const App = () => {
   const [cards, setCards] = React.useState<CardType[]>(
@@ -14,11 +15,15 @@ const App = () => {
     undefined
   );
 
+  const handleCardClick = (currentClickedCard: CardType) => {
+    setCards((prev) => prev.map((card) => card.id === currentClickedCard.id));
+  };
+
   return (
     <div>
       <Grid>
         {cards.map((card) => (
-          <p>{card.id}</p>
+          <Card key={card.id} card={card} callback={handleCardClick} />
         ))}
       </Grid>
     </div>
