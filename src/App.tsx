@@ -15,6 +15,13 @@ const App = () => {
     undefined
   );
 
+  React.useEffect(() => {
+    if (matchedPairs === cards.length / 2) {
+      alert("Game won");
+      setGameWon(true);
+    }
+  }, [matchedPairs]);
+
   const handleCardClick = (currentClickedCard: CardType) => {
     setCards((prev) =>
       prev.map((card) =>
@@ -38,6 +45,7 @@ const App = () => {
             : card
         )
       );
+      setClickedCard(undefined);
       return;
     }
 
@@ -50,6 +58,7 @@ const App = () => {
         )
       );
     }, 1000);
+    setClickedCard(undefined);
   };
 
   return (
